@@ -29,12 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Assign an onclick event to the remove button
         removeButton.onclick = () => {
-            taskList.removeChild(li); // Remove the li element from the taskList
+            // When the button is clicked, remove the li element from taskList
+            taskList.removeChild(li); 
         };
 
-        // Add click event to toggle the completed state of the task
+        // Optionally, you can add a class for styling or indicating a completed task
         li.onclick = () => {
-            li.classList.toggle('completed'); // Toggle the 'completed' class on the li
+            // Toggle the 'completed' class on the list item
+            li.classList.toggle('completed'); // Toggle the completed state when clicked
         };
 
         // Append the remove button to the li element
