@@ -10,29 +10,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check if the input is not empty
         if (taskText === "") {
             alert("Please enter a task."); // Alert if input is empty
-            return;
+            return; // Exit the function if the input is empty
         }
 
-        const li = document.createElement('li'); // Create a new list item
-        li.textContent = taskText; // Set the text of the list item
+        // Create a new li element
+        const li = document.createElement('li'); 
+        li.textContent = taskText; // Set its textContent to taskText
 
-        const removeButton = document.createElement('button'); // Create a remove button
+        // Create a new button element for removing the task
+        const removeButton = document.createElement('button'); 
         removeButton.textContent = "Remove"; // Set button text
-        removeButton.className = 'remove-btn'; // Add class for styling
+        removeButton.className = 'remove-btn'; // Add class name for styling
 
-        // Add click event to remove the task
+        // Assign an onclick event to the remove button
         removeButton.onclick = () => {
-            taskList.removeChild(li); // Remove the list item when button is clicked
+            taskList.removeChild(li); // Remove the li element from taskList
         };
 
-        // Add a click event to toggle a completed task
-        li.onclick = () => {
-            li.classList.toggle('completed'); // Toggle 'completed' class on the list item
-        };
+        // Append the remove button to the li element
+        li.appendChild(removeButton); 
 
-        li.appendChild(removeButton); // Append the remove button to the list item
-        taskList.appendChild(li); // Append the list item to the task list
-        taskInput.value = ""; // Clear the input field
+        // Append the li to taskList
+        taskList.appendChild(li); 
+
+        // Clear the task input field
+        taskInput.value = ""; 
     }
 
     // Event listener for adding task when button is clicked
