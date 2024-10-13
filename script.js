@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
             taskList.removeChild(li); // Remove the li element from taskList
         };
 
+        // Add click event to toggle the completed state of the task
+        li.onclick = () => {
+            li.classList.toggle('completed'); // Toggle 'completed' class on the list item
+        };
+
         // Append the remove button to the li element
         li.appendChild(removeButton); 
 
